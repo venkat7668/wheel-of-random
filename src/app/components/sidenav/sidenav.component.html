@@ -1,15 +1,22 @@
-<ul class="collapsible">
-  <!--[groupId]="group.id" [themeName]="group.theme" [groupName]="group.name"-->
-  <li app-group [groupData]="group" [groupIndex]="i" *ngFor="let group of groups; let i = index;">
-  </li>
-</ul>
+<nav>
+  <div id="slide-out" class="side-nav">
+    <ul class="collapsible">
+      <!--[groupId]="group.id" [themeName]="group.theme" [groupName]="group.name"-->
+      <li app-group [groupData]="group" [groupIndex]="i" *ngFor="let group of groups; let i = index;">
+      </li>
+    </ul>
+  </div>
+  <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+</nav>
+
+
 <!-- Add Group-->
-<div class="row" [ngClass]="{hide:!addingGroup}">
+<div class="row" style="display:none" [ngClass]="{hide:!addingGroup}">
   <div class="input-field col s12">
     <label for="first_name">Group Name</label>
     <input placeholder="Group Name" id="first_name" maxlength="20" type="text" class="validate" [(ngModel)]="newGroupName">
-
   </div>
+
   <!-- theme select for a group-->
   <div class="col s12 ">
     <label>Theme</label>
@@ -23,6 +30,5 @@
     <button class="waves-effect waves-light btn" (click)="addGroupCancle()">Cancle</button> <button (click)="saveGroup()"
       class="waves-effect waves-light btn right">Save</button>
   </div>
+  <a class="waves-effect waves-light btn" *ngIf="!addingGroup" (click)="addGroup()">Add Group</a>
 </div>
-
-<a class="waves-effect waves-light btn" *ngIf="!addingGroup" (click)="addGroup()">Add Group</a>

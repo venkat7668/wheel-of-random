@@ -1,18 +1,16 @@
-<div class="col s3">
-  <ul class="collapsible">
-    <ul class="collection">
-      <li class="collection-item">Last spin</li>
-      <li class="collection-item">
-        <p>Group: <br />
-          {{lastSpin?.group_name}}
-        </p>
-        <p>Result: <br />
-         {{lastSpin?.result}}
-        </p>
-        <p>Time<br />
-          {{lastSpin?.time | date:'short'}}
-        </p>
-      </li>
-    </ul>
+<ul class="collapsible">
+  <ul class="collection">
+    <li class="collection-item">Last spin</li>
+    <li class="collection-item">
+      <p>Group: <br />
+        {{lastSpin?.group_name}}
+      </p>
+      <p>Result: <br />
+        {{lastSpin?.result}}
+      </p>
+      <p>Time<br />
+        {{lastSpin?.time | date:'short'}}
+      </p>
+    </li>
   </ul>
-</div>
+</ul>

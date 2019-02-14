@@ -1,18 +1,19 @@
+<app-sidenav></app-sidenav>
 <div class="container">
     <div class="row">
-        <div class="col s4">
-            <app-sidenav></app-sidenav>
-        </div>
         <!--wheel-->
-        <div class="col s5">
-            <app-wheel [names]="names" (onwheelstop)="wheelStopHandler($event)" #wheel></app-wheel>
+        <div class="col s12 m9">
+            <app-wheel style="margin:0 auto" [names]="names" (onwheelstop)="wheelStopHandler($event)" #wheel></app-wheel>
             <div class="row">
                 <div class="col s12 center-align">
                     <button class="waves-effect waves-light btn-large" [disabled]="isSpinning" (click)="spinHandler()">Spin</button>
                 </div>
             </div>
         </div>
-        <!-- Logs-->
-        <app-logs></app-logs>
+        <div class="col m3 hide-on-small-only">
+          <!-- Logs-->
+        <app-logs></app-logs>  
+        </div>
+        
     </div>
 </div>
