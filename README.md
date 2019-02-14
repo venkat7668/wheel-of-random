@@ -1,6 +1,8 @@
 # Wheel of random
 Wheel of random is fun util game, it picks one guy randomly from the group of friends. I developed this game for one of funny use cases.
 
+[DEMO](https://wheel-of-random.herokuapp.com/)
+
 # Use case
 There are a group of close friends in office and they daily leave for a tea break in evening. They want to play a game on who buys the tea for a group. They usually use paper chits to pick one chit among other, the guy who's name in the chit he has to pay the bill for the day.
 
