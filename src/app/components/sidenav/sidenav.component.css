@@ -1,0 +1,23 @@
+.collapsible-body{
+    padding: 0;
+}
+
+.fullwidth {
+width:100%;
+margin-left:0;
+margin-right:0;
+padding-left:0;
+padding-right:0;
+display:block;
+text-align:center;
+}
+
+.hide{
+    display: none;
+}
+select{
+    display: block;
+}
+.marginTop{
+    margin-top: 20px;
+}

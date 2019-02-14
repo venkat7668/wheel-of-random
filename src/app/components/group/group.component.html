@@ -1,0 +1,76 @@
+<div class="collapsible-header">
+  <!-- View -->
+  <i class="material-icons">filter_drama</i>{{groupData.name}}
+</div>
+
+<div class="collapsible-body">
+  <div class="row" *ngIf="!isEdit">
+    <div class="col s12">
+      <button class="waves-effect waves-light btn" (click)="addMember()"><i class="material-icons">group_add</i></button>
+      <button class="waves-effect waves-light btn right" [disabled]="isUpdateWhellEnabled" (click)="getEnabledMembersFromGroup()">
+        update wheel</button>
+    </div>
+  </div>
+
+  <!-- Add Member -->
+  <ul class="collection add-member-collection" *ngIf="isMemberAdding">
+    <li class="collection-item no-border">
+      <div class="input-field">
+        <input type="text" [(ngModel)]="newMemberName" #name="ngModel" #memberEl class="form-control" required
+          minlength="4" maxlength="14">
+        <label for="first_name">Member Name</label>
+        <!--field err messages-->
+        <span class="info" *ngIf="name.errors?.minlength">
+          Name must be more then 4 characters
+        </span>
+      </div>
+    </li>
+    <!--add buttons-->
+    <div class="col s12">
+      <button class="waves-effect waves-light btn" (click)="addMemeberCancle()">Cancle</button>
+      <button (click)="saveMember()" [disabled]="!name.valid" class="waves-effect waves-light btn right">Save</button>
+    </div>
+  </ul>
+
+  <ul class="collection">
+    <!--Edit-->
+    <div *ngIf="isEdit">
+      <li class="collection-item" *ngFor="let member of members; let i = index;">
+        <div class="row">
+          <div class="col s10"><input type="text" [(ngModel)]="member.name" /> </div>
+          <div>
+            <button class="btn-flat no-padding-btn s1">
+              <i class="material-icons dp48" (click)="updateMember(member)">save</i>
+            </button>
+            <button class="btn-flat no-padding-btn s1">
+              <i class="material-icons dp48" (click)="deteleMember(member, i)">delete</i>
+            </button>
+          </div>
+        </div>
+      </li>
+    </div>
+
+    <!--View-->
+    <div *ngIf="!isEdit">
+      <li class="collection-item" *ngIf="!members.length">Please add member to group</li>
+
+      <li class="collection-item" *ngFor="let member of members">
+        {{member.name}}
+        <div class="switch right">
+          <label>
+            <input type="checkbox" [(ngModel)]="member.enable" (ngModelChange)="checkboxChanged(member)">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </li>
+      <li class="collection-item info" *ngIf="members.length == 1">Add 2nd member to enable update wheel</li>
+    </div>
+  </ul>
+  <button class="waves-effect waves-light btn" [disabled]="isMangeGroupEnabled" (click)="manageGroup()" *ngIf="!isEdit">Manage
+    Group</button>
+  <!--manage group-->
+  <div *ngIf="isEdit">
+    <button class="waves-effect waves-light btn red" (click)="deleteGroup(groupData.id)">Detele Group</button>
+    <button class="waves-effect waves-light btn right" (click)="manageGroupCancle()">Back</button>
+  </div>
+</div>

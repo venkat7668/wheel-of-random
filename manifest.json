@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Who Pays?",
+  "description": "Developed by Venkat Lankalapalli",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background":{
+    "scripts": ["background.js"]
+  },
+  "permissions": ["storage","tabs"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": [
+    "assets/css/*",
+    "assets/js/*",
+    "assets/fonts/*"
+  ]
+}

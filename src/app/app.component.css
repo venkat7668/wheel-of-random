@@ -1,0 +1,10 @@
+body{
+    font-family: Roboto,sans-serif !important;
+    font-size: 15px !important;
+}
+app-wheel{
+    display: block;
+    background: url('/assets/bg.png') -18px -9px no-repeat;
+    width: 400px;
+    height: 400px;
+}
