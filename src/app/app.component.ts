@@ -22,7 +22,8 @@ export class AppComponent implements OnInit {
   }
 
   wheelStopHandler(resultObj) {
-    console.log(`Segment: ${resultObj.index}, Name: ${resultObj.name}`)
+    window['Materialize'].toast(`This time : ${resultObj.name}`, 3*1000, 'text-center-flex')
+    //console.log(`Segment: ${resultObj.index}, Name: ${resultObj.name}`)
     this.isSpinning = false;
   }
 
