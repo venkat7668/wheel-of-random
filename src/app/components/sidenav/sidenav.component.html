@@ -5,30 +5,33 @@
       <li class="active" app-group [groupData]="group" [groupIndex]="i" *ngFor="let group of groups; let i = index;">
       </li>
     </ul>
+    <!-- Add Group-->
+    <div class="row newGroupColor" [ngClass]="{hide:!addingGroup}">
+      <div class="col s12">
+        <label for="first_name"></label>
+        <input placeholder="New Group Name" required minlength="3" ([ngModel])="group" #groupEl="ngModel" id="first_name"
+          maxlength="20" type="text" class="border-bottom" [(ngModel)]="newGroupName">
+        <!-- theme select for a group-->
+        <div class="line-height">
+          <label>Theme</label>
+          <select [(ngModel)]="newGroupTheme">
+            <option disabled selected value="">Choose Theme</option>
+            <option [value]="theme.name" *ngFor="let theme of themeNames">{{theme.name | titlecase}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col s12 marginTop">
+        <button class="waves-effect waves-light btn left" (click)="addGroupCancle()">Cancle</button>
+        <button (click)="saveGroup()" [disabled]="!groupEl.valid" class="waves-effect waves-light btn right">Save</button>
+      </div>
+    </div>
+
+    <div class="row blue-grey lighten-5">
+      <div class="col s12">
+        <a class="waves-effect waves-light pink btn" *ngIf="!addingGroup" (click)="addGroup()">New Group</a>
+      </div>
+    </div>
+
   </div>
   <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
 </nav>
-
-
-<!-- Add Group-->
-<div class="row" [ngClass]="{hide:!addingGroup}">
-  <div class="input-field col s12">
-    <label for="first_name">Group Name</label>
-    <input placeholder="Group Name" id="first_name" maxlength="20" type="text" class="validate" [(ngModel)]="newGroupName">
-  </div>
-
-  <!-- theme select for a group-->
-  <div class="col s12 ">
-    <label>Theme</label>
-    <select [(ngModel)]="newGroupTheme">
-      <option disabled selected value="">Choose Theme</option>
-      <option [value]="theme.name" *ngFor="let theme of themeNames">{{theme.name | titlecase}}</option>
-    </select>
-  </div>
-
-  <div class="col s12 marginTop">
-    <button class="waves-effect waves-light btn" (click)="addGroupCancle()">Cancle</button> <button (click)="saveGroup()"
-      class="waves-effect waves-light btn right">Save</button>
-  </div>
-  <a class="waves-effect waves-light btn" *ngIf="!addingGroup" (click)="addGroup()">Add Group</a>
-</div>

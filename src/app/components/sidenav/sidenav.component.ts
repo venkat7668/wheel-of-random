@@ -37,8 +37,7 @@ export class SidenavComponent implements OnInit {
     $('.button-collapse').sideNav({
       menuWidth: 320,
       edge: 'left',
-      closeOnClick: true,
-      onOpen:function(){console.log("hello")}
+      closeOnClick: true
     });
   }
 
@@ -47,7 +46,6 @@ export class SidenavComponent implements OnInit {
       this.groups = groups;
     })
   }
-
 
   addGroup() {
     this.addingGroup = true;

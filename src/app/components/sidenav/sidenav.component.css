@@ -21,3 +21,12 @@ select{
 .marginTop{
     margin-top: 20px;
 }
+nav .newGroupColor{
+   color: rgba(0, 0, 0, 0.87);
+}
+nav #first_name.border-bottom{
+    border-bottom-color: #ccc
+}
+.line-height{
+    line-height: 26px;
+}
