@@ -35,9 +35,10 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
     let $ = window['$'];
     $('.button-collapse').sideNav({
-      menuWidth: 300, // Default is 240
-      edge: 'left', // Choose the horizontal origin
-      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      menuWidth: 320,
+      edge: 'left',
+      closeOnClick: true,
+      onOpen:function(){console.log("hello")}
     });
   }
 

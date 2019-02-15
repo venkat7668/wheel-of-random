@@ -2,7 +2,7 @@
   <div id="slide-out" class="side-nav">
     <ul class="collapsible">
       <!--[groupId]="group.id" [themeName]="group.theme" [groupName]="group.name"-->
-      <li app-group [groupData]="group" [groupIndex]="i" *ngFor="let group of groups; let i = index;">
+      <li class="active" app-group [groupData]="group" [groupIndex]="i" *ngFor="let group of groups; let i = index;">
       </li>
     </ul>
   </div>

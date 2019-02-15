@@ -42,8 +42,14 @@
 .collapsible-body{
     padding-top:10px;
 }
+.bottom-padding{
+    padding-bottom: 10px;
+}
 
 .addGroupIcon{
     height: 36px!important;
     line-height: 36px!important;
+}
+.collection-item{
+    padding-right: 0!important;
 }
