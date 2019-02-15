@@ -99,7 +99,7 @@ export class WheelComponent implements OnInit {
       path, d, g, svgText, textNode,
 
       titleDist = 15;
-      this.wheelRef.nativeElement.innerHTML='<style _ngcontent-c2=""> .text { font: bold 4px Arial; fill: rgb(255, 255, 255); } </style>';
+    this.wheelRef.nativeElement.innerHTML = '<style _ngcontent-c2=""> .text { font: bold 4px Arial; fill: rgb(255, 255, 255); } </style>';
 
     for (var i = 0; i < slices; i++) {
       path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -123,8 +123,9 @@ export class WheelComponent implements OnInit {
       path.setAttributeNS(null, "d", d);
       path.setAttributeNS(null, 'fill', this.colors[i]);
 
-      fromCoordX = cx + (titleDist * Math.cos((fromAngle + (360 / slices) / 2) * Math.PI / 180));
-      fromCoordY = cy + (titleDist * Math.sin((fromAngle + (360 / slices) / 2) * Math.PI / 180));
+      let centerTheta = (toAngle - fromAngle) / 2 + fromAngle + 4; // 4px for textnode height adjustment
+      fromCoordX = cx + (titleDist * Math.cos(centerTheta * Math.PI / 180));
+      fromCoordY = cy + (titleDist * Math.sin(centerTheta * Math.PI / 180));
 
       svgText.setAttributeNS(null, "style", "transform:translate(" + (fromCoordX) + "px," + (fromCoordY) + "px) rotate(" + ((i * (360 / slices)) + (360 / slices) / 2) + "deg)")
 

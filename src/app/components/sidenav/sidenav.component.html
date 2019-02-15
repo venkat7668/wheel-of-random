@@ -11,7 +11,7 @@
 
 
 <!-- Add Group-->
-<div class="row" style="display:none" [ngClass]="{hide:!addingGroup}">
+<div class="row" [ngClass]="{hide:!addingGroup}">
   <div class="input-field col s12">
     <label for="first_name">Group Name</label>
     <input placeholder="Group Name" id="first_name" maxlength="20" type="text" class="validate" [(ngModel)]="newGroupName">
