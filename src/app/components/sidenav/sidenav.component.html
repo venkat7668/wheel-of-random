@@ -9,7 +9,7 @@
     <div class="row newGroupColor" [ngClass]="{hide:!addingGroup}">
       <div class="col s12">
         <label for="first_name"></label>
-        <input placeholder="New Group Name" required minlength="3" ([ngModel])="group" #groupEl="ngModel" id="first_name"
+        <input placeholder="New Group Name" required minlength="3" #groupEl="ngModel" id="first_name"
           maxlength="20" type="text" class="border-bottom" [(ngModel)]="newGroupName">
         <!-- theme select for a group-->
         <div class="line-height">
